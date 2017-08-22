@@ -11,7 +11,20 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
 import com.hencoder.hencoderpracticedraw5.R;
-
+/*
+*
+* 总调度方法:
+* draw 调用所有绘制流程的相关方法
+* 在 ViewGroup 的子类中重写除 dispatchDraw() 以外的绘制方法时，可能需要调用 setWillNotDraw(false)；
+* s在重写的方法有多个选择时，优先选择 onDraw()。
+*
+*绘制流程
+* 1.背景 drawBackground 不可重写
+* 2.主体
+* 3.子view
+* 4.滑动边缘渐变滑动条 onDrawForeGround 可重写
+* 5.前景 onDrawForeGround 可重写
+* */
 public class Practice01AfterOnDrawView extends AppCompatImageView {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
